@@ -1,0 +1,318 @@
+/**
+ * CJC Recipe Block Editor Styles
+ */
+
+/* Editor Placeholder */
+.cjc-recipe-editor-placeholder .components-placeholder {
+    min-height: 200px;
+}
+
+.cjc-recipe-editor-placeholder .components-placeholder__instructions {
+    margin-bottom: 1em;
+}
+
+.cjc-recipe-editor-placeholder .components-placeholder__fieldset {
+    gap: 1em;
+}
+
+/* Loading State */
+.cjc-recipe-editor-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+/* Recipe Editor Container */
+.cjc-recipe-editor {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Recipe Header */
+.cjc-recipe-editor-header {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.cjc-recipe-editor-image {
+    flex: 0 0 200px;
+}
+
+.cjc-recipe-editor-image-wrapper {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    background: #f9f9f9;
+    transition: border-color 0.2s;
+}
+
+.cjc-recipe-editor-image-wrapper:hover {
+    border-color: #007cba;
+}
+
+.cjc-recipe-editor-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cjc-recipe-editor-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #757575;
+}
+
+.cjc-recipe-editor-image-placeholder .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+}
+
+.cjc-recipe-editor-title-area {
+    flex: 1;
+}
+
+.cjc-recipe-editor-title-input input {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    padding: 8px 12px !important;
+}
+
+/* Sections */
+.cjc-recipe-editor-section {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+}
+
+.cjc-recipe-editor-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    color: #1e1e1e;
+}
+
+/* Times Editor */
+.cjc-times-editor {
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.cjc-time-input,
+.cjc-yield-input,
+.cjc-yield-number-input {
+    max-width: 180px;
+}
+
+/* Ingredients Editor */
+.cjc-ingredients-editor {
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.cjc-ingredients-group {
+    margin-bottom: 24px;
+}
+
+.cjc-ingredients-group:last-child {
+    margin-bottom: 0;
+}
+
+.cjc-ingredients-group-header {
+    margin-bottom: 12px;
+}
+
+.cjc-ingredients-group-header input {
+    font-weight: 600;
+}
+
+.cjc-ingredients-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.cjc-ingredient-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: grab;
+}
+
+.cjc-ingredient-item:hover {
+    border-color: #007cba;
+}
+
+.cjc-ingredient-drag-handle {
+    cursor: grab;
+    color: #757575;
+    margin-top: 8px;
+}
+
+.cjc-ingredient-amount input {
+    width: 60px !important;
+    min-width: 60px !important;
+}
+
+.cjc-ingredient-unit {
+    width: 80px !important;
+    min-width: 80px !important;
+}
+
+.cjc-ingredient-name input {
+    min-width: 150px;
+}
+
+.cjc-ingredient-notes input {
+    width: 120px !important;
+    min-width: 120px !important;
+}
+
+.cjc-add-ingredient-btn {
+    margin-top: 8px;
+}
+
+.cjc-add-group-btn {
+    margin-top: 16px;
+}
+
+/* Instructions Editor */
+.cjc-instructions-editor {
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.cjc-instructions-group {
+    margin-bottom: 24px;
+}
+
+.cjc-instructions-group:last-child {
+    margin-bottom: 0;
+}
+
+.cjc-instructions-group-header {
+    margin-bottom: 12px;
+}
+
+.cjc-instructions-group-header input {
+    font-weight: 600;
+}
+
+.cjc-instructions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.cjc-instruction-step {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    cursor: grab;
+}
+
+.cjc-instruction-step:hover {
+    border-color: #007cba;
+}
+
+.cjc-instruction-step-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.cjc-instruction-drag-handle {
+    cursor: grab;
+    color: #757575;
+}
+
+.cjc-instruction-step-number {
+    font-weight: 600;
+    color: #007cba;
+    flex: 1;
+}
+
+.cjc-add-step-btn {
+    margin-top: 8px;
+}
+
+/* Recipe Selector Modal */
+.cjc-recipe-selector {
+    min-width: 300px;
+}
+
+.cjc-recipe-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cjc-recipe-list li {
+    margin: 0;
+    padding: 0;
+}
+
+.cjc-recipe-list .components-button {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.cjc-recipe-list .components-button:hover {
+    background: #f0f0f0;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .cjc-recipe-editor-header {
+        flex-direction: column;
+    }
+
+    .cjc-recipe-editor-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .cjc-recipe-editor-image-wrapper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .cjc-ingredient-item .components-flex {
+        flex-wrap: wrap;
+    }
+}

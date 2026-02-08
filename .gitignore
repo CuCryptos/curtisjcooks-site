@@ -1,0 +1,27 @@
+# Track ONLY custom code - ignore everything else
+*
+
+# Allow these specific files/directories
+!.gitignore
+!CLAUDE.md
+
+# Custom child theme
+!wp-content/
+!wp-content/themes/
+!wp-content/themes/suspended-flavor-child/
+!wp-content/themes/suspended-flavor-child/**
+
+# Custom plugins
+!wp-content/plugins/
+!wp-content/plugins/cjc-auto-schema/
+!wp-content/plugins/cjc-auto-schema/**
+!wp-content/plugins/cjc-recipe-features/
+!wp-content/plugins/cjc-recipe-features/**
+
+# Ignore within tracked directories
+**/node_modules/
+**/build/
+**/.git/
+**/.claude/
+**/.DS_Store
+**/package-lock.json

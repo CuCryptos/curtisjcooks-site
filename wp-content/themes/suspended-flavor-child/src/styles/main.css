@@ -1,0 +1,1040 @@
+/**
+ * CurtisJCooks React Homepage Styles
+ */
+
+/* =============================================
+   CSS Variables
+   ============================================= */
+
+:root {
+    --cjc-orange: #f97316;
+    --cjc-orange-dark: #ea580c;
+    --cjc-orange-light: #fb923c;
+    --cjc-teal: #14b8a6;
+    --cjc-teal-dark: #0d9488;
+    --cjc-gray-900: #111827;
+    --cjc-gray-800: #1f2937;
+    --cjc-gray-700: #374151;
+    --cjc-gray-600: #4b5563;
+    --cjc-gray-500: #6b7280;
+    --cjc-gray-400: #9ca3af;
+    --cjc-gray-200: #e5e7eb;
+    --cjc-gray-100: #f3f4f6;
+    --cjc-gray-50: #f9fafb;
+}
+
+/* =============================================
+   Base App Styles
+   ============================================= */
+
+/* Fix scrolling */
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    height: auto !important;
+}
+
+#main-content,
+#cjc-react-root {
+    overflow: visible;
+}
+
+.cjc-app {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--cjc-gray-800);
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+}
+
+.cjc-app * {
+    box-sizing: border-box;
+}
+
+/* =============================================
+   Animations
+   ============================================= */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.15; }
+    90% { opacity: 0.15; }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-25%); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.8); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =============================================
+   Floating Particles
+   ============================================= */
+
+.cjc-floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.cjc-particle {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0;
+    animation: float 15s ease-in-out infinite;
+}
+
+/* =============================================
+   Hero Section
+   ============================================= */
+
+.cjc-hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #f0fdfa 100%);
+    overflow: hidden;
+    padding: 100px 24px 60px;
+}
+
+.cjc-hero-bg-animation {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, transparent 50%, rgba(20, 184, 166, 0.1) 100%);
+    animation: wave 10s ease-in-out infinite;
+}
+
+.cjc-hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.cjc-hero-text {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 1s ease;
+}
+
+.cjc-hero-text.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cjc-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff7ed;
+    color: var(--cjc-orange-dark);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.cjc-badge-icon {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.cjc-hero-section h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--cjc-gray-900);
+    line-height: 1.1;
+    margin: 0 0 24px 0;
+}
+
+.cjc-gradient-text {
+    display: block;
+    background: linear-gradient(90deg, var(--cjc-orange) 0%, var(--cjc-orange-light) 50%, var(--cjc-teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cjc-hero-description {
+    font-size: 1.25rem;
+    color: var(--cjc-gray-600);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.cjc-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.cjc-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--cjc-orange) 0%, var(--cjc-orange-light) 100%);
+    color: white !important;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.cjc-btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.4);
+}
+
+.cjc-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--cjc-gray-700) !important;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: 2px solid var(--cjc-gray-200);
+    transition: all 0.3s ease;
+}
+
+.cjc-btn-secondary:hover {
+    border-color: var(--cjc-orange-light);
+    color: var(--cjc-orange) !important;
+    transform: scale(1.05);
+}
+
+/* Hero Image Stack */
+.cjc-hero-image-stack {
+    position: relative;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 1s ease 0.3s;
+}
+
+.cjc-hero-image-stack.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cjc-hero-main-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.cjc-hero-main-image:hover {
+    transform: scale(1.03);
+}
+
+.cjc-hero-main-image img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+.cjc-hero-image-overlay {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cjc-overlay-title {
+    font-weight: 700;
+    color: var(--cjc-gray-900);
+    margin: 0;
+}
+
+.cjc-overlay-subtitle {
+    font-size: 0.875rem;
+    color: var(--cjc-gray-500);
+    margin: 4px 0 0 0;
+}
+
+.cjc-stars {
+    color: var(--cjc-orange);
+    font-size: 1rem;
+}
+
+.cjc-floating-card {
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 30;
+}
+
+.cjc-floating-card.top-right {
+    top: -32px;
+    right: -32px;
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.cjc-floating-card.bottom-left {
+    bottom: -16px;
+    left: -32px;
+    background: linear-gradient(135deg, var(--cjc-orange) 0%, var(--cjc-orange-light) 100%);
+    color: white;
+    text-align: center;
+}
+
+.cjc-card-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cjc-card-label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.cjc-scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--cjc-gray-400);
+    font-size: 0.875rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* =============================================
+   Stats Section
+   ============================================= */
+
+.cjc-stats-section {
+    background: linear-gradient(135deg, var(--cjc-orange) 0%, var(--cjc-orange-light) 100%);
+    padding: 64px 24px;
+}
+
+.cjc-stats-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    text-align: center;
+}
+
+.cjc-stat-item {
+    color: white;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.8s ease;
+}
+
+/* Animation enhancement when scrolled into view */
+.cjc-stat-item.animate-in {
+    animation: statPop 0.8s ease forwards;
+}
+
+@keyframes statPop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.cjc-stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.cjc-stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* =============================================
+   Categories Section
+   ============================================= */
+
+.cjc-categories-section {
+    padding: 80px 24px;
+    background: white;
+}
+
+.cjc-section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.cjc-section-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--cjc-gray-900);
+    margin: 0 0 16px 0;
+}
+
+.cjc-section-subtitle {
+    font-size: 1.25rem;
+    color: var(--cjc-gray-600);
+    margin: 0;
+}
+
+.cjc-category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cjc-category-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-radius: 50px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.cjc-category-pill.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cjc-category-pill:hover {
+    transform: scale(1.05) translateY(0);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.cjc-category-pill.active {
+    background: linear-gradient(135deg, var(--cjc-orange) 0%, var(--cjc-orange-light) 100%);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+    transform: scale(1.05);
+}
+
+.cjc-pill-icon {
+    font-size: 1.5rem;
+}
+
+.cjc-pill-info {
+    text-align: left;
+}
+
+.cjc-pill-name {
+    font-weight: 600;
+    color: var(--cjc-gray-700);
+    display: block;
+}
+
+.cjc-category-pill.active .cjc-pill-name {
+    color: white;
+}
+
+.cjc-pill-count {
+    font-size: 0.75rem;
+    color: var(--cjc-gray-400);
+}
+
+.cjc-category-pill.active .cjc-pill-count {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* =============================================
+   Content Series Section
+   ============================================= */
+
+.cjc-series-section {
+    padding: 80px 24px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fff7ed 50%, #f0fdfa 100%);
+}
+
+.cjc-series-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cjc-series-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: white;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    border-left: 4px solid var(--series-color, var(--cjc-orange));
+}
+
+.cjc-series-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cjc-series-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cjc-series-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.cjc-series-content {
+    flex: 1;
+}
+
+.cjc-series-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cjc-gray-900);
+    margin: 0 0 8px 0;
+}
+
+.cjc-series-description {
+    font-size: 0.9rem;
+    color: var(--cjc-gray-600);
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+}
+
+.cjc-series-count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--cjc-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cjc-series-arrow {
+    font-size: 1.5rem;
+    color: var(--cjc-gray-300);
+    transition: all 0.3s ease;
+}
+
+.cjc-series-card:hover .cjc-series-arrow {
+    color: var(--series-color, var(--cjc-orange));
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .cjc-series-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cjc-series-card {
+        padding: 20px;
+    }
+
+    .cjc-series-icon {
+        font-size: 2rem;
+    }
+}
+
+/* =============================================
+   Recipes Section
+   ============================================= */
+
+.cjc-recipes-section {
+    padding: 80px 24px;
+    background: var(--cjc-gray-50);
+}
+
+.cjc-recipes-section .cjc-section-header {
+    max-width: 1280px;
+    margin: 0 auto 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+}
+
+.cjc-view-all-link {
+    color: var(--cjc-orange);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cjc-view-all-link:hover {
+    color: var(--cjc-orange-dark);
+}
+
+.cjc-recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.cjc-recipe-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+}
+
+.cjc-recipe-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cjc-card-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.cjc-recipe-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.cjc-recipe-card.is-hovered img,
+.cjc-recipe-card:hover img {
+    transform: scale(1.1);
+}
+
+.cjc-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.1) 100%);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.cjc-recipe-card.is-hovered .cjc-card-overlay,
+.cjc-recipe-card:hover .cjc-card-overlay {
+    opacity: 1;
+}
+
+.cjc-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.cjc-card-category {
+    display: inline-block;
+    background: var(--cjc-orange);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.cjc-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cjc-recipe-card.is-hovered .cjc-card-title,
+.cjc-recipe-card:hover .cjc-card-title {
+    transform: translateY(0);
+}
+
+.cjc-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all 0.5s ease;
+}
+
+.cjc-recipe-card.is-hovered .cjc-card-meta,
+.cjc-recipe-card:hover .cjc-card-meta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   Newsletter Section
+   ============================================= */
+
+.cjc-newsletter-section {
+    padding: 80px 24px;
+    background: linear-gradient(135deg, var(--cjc-teal-dark) 0%, var(--cjc-teal) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cjc-newsletter-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.cjc-newsletter-bg span {
+    position: absolute;
+    font-size: 8rem;
+}
+
+.cjc-newsletter-bg span:first-child {
+    top: 40px;
+    left: 40px;
+}
+
+.cjc-newsletter-bg span:last-child {
+    bottom: 40px;
+    right: 40px;
+}
+
+.cjc-newsletter-content {
+    max-width: 768px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.cjc-newsletter-content.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cjc-newsletter-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: white;
+    margin: 0 0 16px 0;
+}
+
+.cjc-newsletter-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 32px 0;
+}
+
+.cjc-newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .cjc-newsletter-form {
+        flex-direction: row;
+    }
+}
+
+.cjc-newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 16px 24px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.cjc-newsletter-form input[type="email"]:focus {
+    box-shadow: 0 0 0 4px rgba(251, 146, 60, 0.5);
+}
+
+.cjc-newsletter-form button {
+    background: var(--cjc-orange);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cjc-newsletter-form button:hover {
+    background: var(--cjc-orange-dark);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cjc-newsletter-note {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    margin: 16px 0 0 0;
+}
+
+/* =============================================
+   Footer
+   ============================================= */
+
+.cjc-footer {
+    background: var(--cjc-gray-900);
+    color: white;
+    padding: 64px 24px;
+}
+
+.cjc-footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+@media (min-width: 768px) {
+    .cjc-footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.cjc-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cjc-footer-logo span:first-child {
+    font-size: 2.5rem;
+}
+
+.cjc-footer-social {
+    display: flex;
+    gap: 16px;
+}
+
+.cjc-social-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--cjc-gray-800);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cjc-social-icon:hover {
+    background: var(--cjc-orange);
+    transform: scale(1.1);
+}
+
+.cjc-footer-bottom {
+    border-top: 1px solid var(--cjc-gray-700);
+    margin-top: 32px;
+    padding-top: 32px;
+    text-align: center;
+    color: var(--cjc-gray-400);
+    width: 100%;
+    max-width: 1280px;
+}
+
+.cjc-footer-bottom p {
+    margin: 0;
+}
+
+/* =============================================
+   Responsive Styles
+   ============================================= */
+
+@media (max-width: 1024px) {
+    .cjc-hero-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .cjc-hero-section h1 {
+        font-size: 2.75rem;
+    }
+
+    .cjc-hero-image-stack {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .cjc-floating-card.top-right {
+        top: -16px;
+        right: -16px;
+    }
+
+    .cjc-floating-card.bottom-left {
+        left: -16px;
+    }
+
+    .cjc-recipes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cjc-hero-section {
+        padding: 100px 24px 60px;
+        min-height: auto;
+    }
+
+    .cjc-hero-section h1 {
+        font-size: 2.25rem;
+    }
+
+    .cjc-hero-buttons {
+        flex-direction: column;
+    }
+
+    .cjc-btn-primary,
+    .cjc-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cjc-stats-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .cjc-stat-number {
+        font-size: 2.5rem;
+    }
+
+    .cjc-category-pills {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cjc-category-pill {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cjc-recipes-section .cjc-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .cjc-recipes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cjc-newsletter-section h2 {
+        font-size: 2rem;
+    }
+
+    .cjc-scroll-indicator {
+        display: none;
+    }
+}

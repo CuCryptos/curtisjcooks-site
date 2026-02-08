@@ -1,0 +1,293 @@
+<?php
+/**
+ * Template Name: Pillar Content Guide
+ * For comprehensive Hawaiian Cooking 101 guides
+ */
+
+get_header();
+
+$hero_color = get_post_meta(get_the_ID(), 'hero_color', true) ?: '#ef4444';
+$hero_color_light = get_post_meta(get_the_ID(), 'hero_color_light', true) ?: '#f87171';
+?>
+
+<style>
+.pillar-hero {
+    background: linear-gradient(135deg, <?php echo esc_attr($hero_color); ?> 0%, <?php echo esc_attr($hero_color_light); ?> 100%);
+    padding: 80px 24px;
+    text-align: center;
+    color: white;
+}
+
+.pillar-hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    margin: 0 0 16px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.pillar-hero .subtitle {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.pillar-hero .series-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.pillar-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+.pillar-toc {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.pillar-toc h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+    color: #1f2937;
+}
+
+.pillar-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pillar-toc-list li {
+    margin-bottom: 12px;
+}
+
+.pillar-toc-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.pillar-toc-list a:hover {
+    border-left-color: <?php echo esc_attr($hero_color); ?>;
+    color: <?php echo esc_attr($hero_color); ?>;
+    transform: translateX(5px);
+}
+
+.pillar-toc-list .toc-number {
+    background: <?php echo esc_attr($hero_color); ?>;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.pillar-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #374151;
+}
+
+.pillar-content h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    color: #1f2937;
+    margin: 60px 0 24px 0;
+    padding-top: 20px;
+    border-top: 2px solid #e5e7eb;
+}
+
+.pillar-content h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin: 40px 0 16px 0;
+}
+
+.pillar-content p {
+    margin-bottom: 24px;
+}
+
+.pillar-content ul, .pillar-content ol {
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+.pillar-content li {
+    margin-bottom: 12px;
+}
+
+.pillar-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 32px 0;
+}
+
+.pillar-content blockquote {
+    background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+    border-left: 4px solid <?php echo esc_attr($hero_color); ?>;
+    padding: 24px;
+    margin: 32px 0;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+}
+
+.pillar-tip {
+    background: #ecfdf5;
+    border: 2px solid #10b981;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 32px 0;
+}
+
+.pillar-tip-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: #059669;
+    margin-bottom: 12px;
+}
+
+.pillar-cta {
+    background: linear-gradient(135deg, <?php echo esc_attr($hero_color); ?>, <?php echo esc_attr($hero_color_light); ?>);
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+}
+
+.pillar-cta h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    margin: 0 0 16px 0;
+    color: white;
+}
+
+.pillar-cta p {
+    margin: 0 0 24px 0;
+    opacity: 0.95;
+}
+
+.pillar-cta-btn {
+    display: inline-block;
+    background: white;
+    color: <?php echo esc_attr($hero_color); ?>;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.pillar-cta-btn:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .pillar-hero h1 {
+        font-size: 2rem;
+    }
+
+    .pillar-content h2 {
+        font-size: 1.5rem;
+    }
+}
+</style>
+
+<div id="main-content">
+
+    <div class="pillar-hero">
+        <span class="series-badge">📚 Hawaiian Cooking 101</span>
+        <h1><?php the_title(); ?></h1>
+        <?php if (has_excerpt()): ?>
+            <p class="subtitle"><?php echo get_the_excerpt(); ?></p>
+        <?php endif; ?>
+    </div>
+
+    <div class="pillar-container">
+
+        <!-- Auto-generated Table of Contents -->
+        <div class="pillar-toc" id="table-of-contents">
+            <h3>📋 In This Guide</h3>
+            <ol class="pillar-toc-list" id="toc-list">
+                <!-- Generated by JavaScript -->
+            </ol>
+        </div>
+
+        <article class="pillar-content">
+            <?php
+            if (have_posts()): while (have_posts()): the_post();
+                the_content();
+            endwhile; endif;
+            ?>
+        </article>
+
+        <!-- CTA Section -->
+        <div class="pillar-cta">
+            <h3>Ready to Start Cooking?</h3>
+            <p>Explore our collection of authentic Hawaiian recipes and put your new knowledge to use!</p>
+            <a href="/recipes/" class="pillar-cta-btn">Browse All Recipes →</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var headings = document.querySelectorAll('.pillar-content h2');
+    var tocList = document.getElementById('toc-list');
+
+    if (headings.length === 0 || !tocList) {
+        document.getElementById('table-of-contents').style.display = 'none';
+        return;
+    }
+
+    headings.forEach(function(heading, index) {
+        // Add ID to heading
+        var id = 'section-' + (index + 1);
+        heading.id = id;
+
+        // Create TOC item
+        var li = document.createElement('li');
+        var link = document.createElement('a');
+        link.href = '#' + id;
+        link.innerHTML = '<span class="toc-number">' + (index + 1) + '</span> ' + heading.textContent;
+
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        li.appendChild(link);
+        tocList.appendChild(li);
+    });
+});
+</script>
+
+<?php get_footer(); ?>
