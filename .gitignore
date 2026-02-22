@@ -5,11 +5,13 @@
 !.gitignore
 !CLAUDE.md
 
-# Custom child theme
+# Custom child themes
 !wp-content/
 !wp-content/themes/
 !wp-content/themes/suspended-flavor-child/
 !wp-content/themes/suspended-flavor-child/**
+!wp-content/themes/cjc-kadence-child/
+!wp-content/themes/cjc-kadence-child/**
 
 # Custom plugins
 !wp-content/plugins/

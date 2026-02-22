@@ -1,0 +1,416 @@
+/*
+Theme Name: CJC Kadence Child
+Theme URI: https://curtisjcooks.com
+Author: Curtis Vaughan
+Author URI: https://curtisjcooks.com
+Description: Modern Hawaiian Luxury design system for CurtisJCooks.com
+Template: kadence
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Text Domain: cjc-kadence-child
+*/
+
+/* =============================================
+   Kadence Header — Modern Hawaiian Header
+   Layout: Logo Left | Nav Center | Search Right
+   ============================================= */
+
+.site-header {
+    font-family: var(--cjc-font-body);
+    border-bottom: 1px solid var(--cjc-warm-sand);
+    transition: background 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* --- Main row: horizontal 3-column layout --- */
+#masthead .site-header-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    max-width: var(--cjc-site-width, 1200px);
+    margin: 0 auto;
+    padding: 0.5rem var(--cjc-space-lg) !important;
+}
+
+/* Left section (logo): fixed width, don't shrink */
+#masthead .site-header-main-section-left.site-header-section {
+    flex: 0 0 auto !important;
+    width: auto !important;
+}
+
+/* Center section (nav): grow to fill, center content */
+#masthead .site-header-main-section-center.site-header-section {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* Right section (search): fixed width, don't shrink */
+#masthead .site-header-main-section-right.site-header-section {
+    flex: 0 0 auto !important;
+    width: auto !important;
+}
+
+/* --- Logo --- */
+.site-header .site-branding .site-title {
+    font-family: var(--cjc-font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--cjc-lava-black);
+}
+
+.site-header .custom-logo {
+    max-height: 80px;
+    width: auto;
+    transition: opacity 0.3s ease;
+}
+
+.site-header .has-logo-image .site-title-wrap {
+    display: none;
+}
+
+.site-header .site-branding {
+    margin-bottom: 0;
+}
+
+/* --- Nav links --- */
+.site-header .primary-menu-container > ul {
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.site-header .primary-menu-container > ul > li > a {
+    font-family: var(--cjc-font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cjc-lava-black);
+    padding: 0.5rem 1.1rem;
+    border-radius: var(--cjc-radius-sm, 4px);
+    transition: color var(--cjc-transition-fast), background 0.2s ease;
+}
+
+.site-header .primary-menu-container > ul > li > a:hover {
+    color: var(--cjc-ocean-deep);
+    background: rgba(14, 116, 144, 0.06);
+}
+
+/* Active menu item highlight */
+.site-header .primary-menu-container > ul > li.current-menu-item > a,
+.site-header .primary-menu-container > ul > li.current-menu-ancestor > a {
+    color: var(--cjc-ocean-deep);
+}
+
+/* --- Dropdown menus --- */
+.site-header .primary-menu-container ul ul {
+    background: white;
+    border: 1px solid var(--cjc-warm-sand);
+    border-top: 3px solid var(--cjc-ocean-deep);
+    border-radius: 0 0 var(--cjc-radius-md) var(--cjc-radius-md);
+    box-shadow: var(--cjc-shadow-lg);
+    min-width: 220px;
+}
+
+.site-header .primary-menu-container ul ul li a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--cjc-reef-gray);
+    padding: 0.6rem 1.25rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-header .primary-menu-container ul ul li a:hover {
+    background-color: var(--cjc-warm-sand);
+    color: var(--cjc-ocean-deep);
+}
+
+/* --- Kadence search toggle --- */
+.site-header .search-toggle-open {
+    color: var(--cjc-reef-gray);
+    transition: color 0.2s ease;
+}
+
+.site-header .search-toggle-open:hover {
+    color: var(--cjc-ocean-deep);
+}
+
+.site-header .search-toggle-open svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Kadence search modal overlay */
+#search-drawer .drawer-inner .drawer-content {
+    background: rgba(255, 251, 235, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#search-drawer .drawer-inner .drawer-content form.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#search-drawer .search-field {
+    font-family: var(--cjc-font-body);
+    font-size: 1.1rem;
+    border: 2px solid var(--cjc-warm-sand);
+    border-radius: var(--cjc-radius-md);
+    padding: 0.75rem 1rem;
+    background: white;
+    transition: border-color 0.2s ease;
+}
+
+#search-drawer .search-field:focus {
+    border-color: var(--cjc-ocean-deep);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.15);
+}
+
+#search-drawer .search-submit {
+    background: var(--cjc-ocean-deep);
+    color: white;
+    border: none;
+    border-radius: var(--cjc-radius-md);
+    padding: 0.75rem 1.5rem;
+    font-family: var(--cjc-font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#search-drawer .search-submit:hover {
+    background: var(--cjc-volcanic-earth);
+}
+
+/* --- Transparent header on single posts & homepage ---
+   Kadence adds transparent bg via inline CSS when transparent-header class is on body.
+   We reinforce it here and remove borders/shadows for clean overlay. */
+.transparent-header .site-header,
+.transparent-header .site-header .site-header-wrap,
+.transparent-header .site-header .site-header-inner-wrap,
+.transparent-header .site-header .site-header-upper-wrap,
+.transparent-header .site-header .site-header-upper-inner-wrap,
+.transparent-header .site-header .site-main-header-wrap,
+.transparent-header .site-header .site-header-row-container-inner,
+.transparent-header .site-header .site-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* All text and links in transparent header → white */
+.transparent-header .site-header .site-title,
+.transparent-header .site-header .site-branding a,
+.transparent-header .site-header .primary-menu-container > ul > li > a,
+.transparent-header .site-header .primary-menu-container > ul > li > a .kadence-menu-toggle-open,
+.transparent-header .site-header .nav--toggle-sub .dropdown-nav-toggle,
+.transparent-header .site-header .drawer-toggle,
+.transparent-header .site-header .search-toggle-open,
+.transparent-header .site-header a {
+    color: white !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Transparent header uses Kadence native logo swap (white logo, media ID 5361).
+   No CSS filter needed — both logos have proper transparent backgrounds. */
+
+.transparent-header .site-header .primary-menu-container > ul > li > a:hover {
+    color: var(--cjc-sunset-gold) !important;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown caret/arrow → white */
+.transparent-header .site-header .nav--toggle-sub .dropdown-nav-toggle svg,
+.transparent-header .site-header .primary-menu-container .menu-item-has-children > a .dropdown-nav-toggle,
+.transparent-header .site-header .primary-menu-container .menu-item-has-children > a::after {
+    color: white !important;
+    fill: white !important;
+}
+
+/* Search icon → white on transparent */
+.transparent-header .site-header .search-toggle-open svg {
+    color: white !important;
+    fill: white !important;
+}
+
+/* Kill Kadence wrapper spacing (our templates own the layout) */
+.transparent-header #inner-wrap {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.single-post .content-area,
+.home .content-area {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.single-post .entry-content-wrap,
+.home .entry-content-wrap {
+    padding: 0;
+}
+
+.transparent-header .site {
+    padding-top: 0;
+}
+
+/* --- Frosted glass header on scroll (homepage) --- */
+.home.header--scrolled .site-header,
+.home.header--scrolled .site-header .site-header-wrap,
+.home.header--scrolled .site-header .site-header-inner-wrap,
+.home.header--scrolled .site-header .site-header-upper-wrap,
+.home.header--scrolled .site-header .site-header-upper-inner-wrap,
+.home.header--scrolled .site-header .site-main-header-wrap,
+.home.header--scrolled .site-header .site-header-row-container-inner,
+.home.header--scrolled .site-header .site-container {
+    background: rgba(255, 251, 235, 0.92) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(254, 243, 199, 0.5) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.home.header--scrolled .site-header {
+    position: fixed;
+    transition: background 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home.header--scrolled .site-header .site-title,
+.home.header--scrolled .site-header .site-branding a,
+.home.header--scrolled .site-header .primary-menu-container > ul > li > a,
+.home.header--scrolled .site-header .search-toggle-open,
+.home.header--scrolled .site-header a {
+    color: var(--cjc-lava-black) !important;
+    text-shadow: none;
+}
+
+.home.header--scrolled .site-header .primary-menu-container > ul > li > a:hover {
+    color: var(--cjc-ocean-deep) !important;
+    background: rgba(14, 116, 144, 0.06);
+}
+
+.home.header--scrolled .site-header .nav--toggle-sub .dropdown-nav-toggle svg,
+.home.header--scrolled .site-header .primary-menu-container .menu-item-has-children > a .dropdown-nav-toggle {
+    color: var(--cjc-lava-black) !important;
+    fill: var(--cjc-lava-black) !important;
+}
+
+.home.header--scrolled .site-header .search-toggle-open svg {
+    color: var(--cjc-lava-black) !important;
+    fill: var(--cjc-lava-black) !important;
+}
+
+/* --- Mobile header --- */
+@media (max-width: 767px) {
+    #masthead .site-header-row {
+        padding: 0.5rem 1rem !important;
+    }
+
+    .site-header .custom-logo {
+        max-height: 40px;
+    }
+
+    /* Hamburger toggle */
+    .site-header .menu-toggle-open {
+        color: var(--cjc-lava-black);
+    }
+
+    .transparent-header .site-header .menu-toggle-open {
+        color: white !important;
+    }
+
+    .home.header--scrolled .site-header .menu-toggle-open {
+        color: var(--cjc-lava-black) !important;
+    }
+}
+
+/* Hide ad injected at top of story content (WP QUADS) */
+.recipe-story > .quads-location:first-child {
+    display: none;
+}
+
+/* =============================================
+   Global Overrides
+   ============================================= */
+
+body {
+    font-family: var(--cjc-font-body);
+    color: var(--cjc-reef-gray);
+    background-color: var(--cjc-coconut-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--cjc-font-heading);
+    color: var(--cjc-lava-black);
+}
+
+a {
+    color: var(--cjc-ocean-deep);
+    transition: color var(--cjc-transition-fast);
+}
+
+a:hover {
+    color: var(--cjc-volcanic-earth);
+}
+
+/* =============================================
+   Kadence Layout Resets — Archive / Category / Tag
+   Our templates own the layout, kill Kadence wrapper spacing.
+   ============================================= */
+
+.archive .content-area,
+.category .content-area,
+.tag .content-area,
+.date .content-area,
+.author .content-area {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.archive .entry-content-wrap,
+.category .entry-content-wrap,
+.tag .entry-content-wrap,
+.date .entry-content-wrap,
+.author .entry-content-wrap {
+    padding: 0;
+}
+
+/* Kill Kadence archive header — we render our own hero */
+.archive .entry-hero-container-inner,
+.category .entry-hero-container-inner,
+.tag .entry-hero-container-inner {
+    display: none;
+}
+
+/* Kill Kadence archive title area */
+.archive .kadence-archive-title,
+.category .kadence-archive-title,
+.tag .kadence-archive-title {
+    display: none;
+}
+
+/* Ensure full-width layout (no sidebar) */
+.archive .site-container .site-inner-wrap,
+.category .site-container .site-inner-wrap,
+.tag .site-container .site-inner-wrap {
+    max-width: 100%;
+    padding: 0;
+}
+
+.archive #inner-wrap .content-container,
+.category #inner-wrap .content-container,
+.tag #inner-wrap .content-container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.archive .content-container .site-main,
+.category .content-container .site-main,
+.tag .content-container .site-main {
+    padding: 0;
+}

@@ -1,0 +1,143 @@
+/* ==========================================================================
+   CJC Print Styles — Recipe Page Print Layout
+   ========================================================================== */
+
+@media print {
+    /* --- Hide non-essential elements --- */
+    .recipe-hero__overlay,
+    .recipe-sticky-nav,
+    .jump-to-recipe,
+    .reading-progress,
+    .recipe-card__actions,
+    .recipe-scaler__btn,
+    .recipe-card__shopping-btn,
+    .related-recipes,
+    .cjc-footer,
+    .kapa-divider,
+    .site-header,
+    header,
+    nav,
+    .recipe-story,
+    #wpadminbar {
+        display: none !important;
+    }
+
+    /* --- Reset body --- */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt !important;
+        font-family: Georgia, 'Times New Roman', serif !important;
+        line-height: 1.5 !important;
+    }
+
+    /* --- Recipe card --- */
+    .recipe-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        page-break-inside: avoid;
+    }
+
+    /* --- Card header --- */
+    .recipe-card__header {
+        background: #f0f0f0 !important;
+        color: black !important;
+        border-radius: 0 !important;
+    }
+
+    .recipe-card__header h2 {
+        color: black !important;
+    }
+
+    /* --- Card body: single column --- */
+    .recipe-card__body {
+        display: block !important;
+    }
+
+    .recipe-card__ingredients {
+        border-right: none !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+
+    /* --- Hero: compact for print --- */
+    .recipe-hero {
+        height: auto !important;
+        min-height: auto !important;
+        position: static !important;
+        padding: 10pt 0 !important;
+    }
+
+    .recipe-hero__image {
+        position: static !important;
+        max-height: 200px !important;
+        width: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        object-fit: contain !important;
+    }
+
+    .recipe-hero__content {
+        position: static !important;
+    }
+
+    .recipe-hero__title {
+        color: black !important;
+        text-shadow: none !important;
+        font-size: 24pt !important;
+    }
+
+    .recipe-hero__meta {
+        color: #333 !important;
+    }
+
+    .recipe-hero__category {
+        color: black !important;
+        background: #eee !important;
+    }
+
+    /* --- No link URLs printed --- */
+    a[href]::after {
+        content: none !important;
+    }
+
+    /* --- Notes section print-friendly --- */
+    .recipe-card__notes {
+        background: #fafafa !important;
+    }
+
+    /* --- Nutrition always visible --- */
+    .recipe-nutrition__content {
+        display: flex !important;
+    }
+
+    .recipe-nutrition__toggle-icon {
+        display: none !important;
+    }
+
+    .recipe-nutrition {
+        max-width: 100% !important;
+    }
+
+    /* --- Checkbox styling for print --- */
+    .recipe-ingredient__checkbox {
+        border: 1px solid #999 !important;
+    }
+
+    /* --- Scaler value still visible --- */
+    .recipe-scaler__value {
+        color: black !important;
+    }
+
+    /* --- Print attribution --- */
+    body::after {
+        content: "Printed from CurtisJCooks.com";
+        display: block;
+        text-align: center;
+        margin-top: 20pt;
+        font-size: 10pt;
+        color: #999;
+    }
+}

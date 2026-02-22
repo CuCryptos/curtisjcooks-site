@@ -1,0 +1,78 @@
+/* ==========================================================================
+   CJC Design Tokens — Hawaiian Earth-Tone Palette
+   ========================================================================== */
+
+:root {
+    /* --- Colors: Primary --- */
+    --cjc-ocean-deep: #0e7490;
+    --cjc-volcanic-earth: #9a3412;
+    --cjc-sunset-gold: #d97706;
+    --cjc-warm-sand: #fefce8;
+    --cjc-lava-black: #1c1917;
+
+    /* --- Colors: Neutrals --- */
+    --cjc-koa-wood: #78350f;
+    --cjc-coconut-cream: #fffbeb;
+    --cjc-reef-gray: #57534e;
+    --cjc-mist: #f5f5f4;
+
+    /* --- Colors: Accents --- */
+    --cjc-plumeria-pink: #e11d48;
+    --cjc-ti-leaf: #15803d;
+
+    /* --- Colors: Derived (hover/focus states) --- */
+    --cjc-ocean-deep-light: #0891b2;
+    --cjc-ocean-deep-dark: #0c4a6e;
+    --cjc-volcanic-earth-light: #c2410c;
+    --cjc-sunset-gold-light: #f59e0b;
+
+    /* --- Typography --- */
+    --cjc-font-heading: 'Lora', Georgia, serif;
+    --cjc-font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    --cjc-font-accent: 'Playfair Display', Georgia, serif;
+
+    /* --- Type Scale --- */
+    --cjc-text-hero: clamp(2.5rem, 5vw, 3.5rem);
+    --cjc-text-h1: clamp(2rem, 4vw, 2.75rem);
+    --cjc-text-h2: clamp(1.5rem, 3vw, 1.75rem);
+    --cjc-text-h3: 1.25rem;
+    --cjc-text-body: 1.125rem;
+    --cjc-text-small: 0.875rem;
+    --cjc-text-caption: 0.8125rem;
+
+    --cjc-leading-tight: 1.2;
+    --cjc-leading-normal: 1.6;
+    --cjc-leading-relaxed: 1.8;
+
+    /* --- Spacing --- */
+    --cjc-space-xs: 0.25rem;
+    --cjc-space-sm: 0.5rem;
+    --cjc-space-md: 1rem;
+    --cjc-space-lg: 1.5rem;
+    --cjc-space-xl: 2rem;
+    --cjc-space-2xl: 3rem;
+    --cjc-space-3xl: 4rem;
+    --cjc-space-4xl: 6rem;
+
+    /* --- Layout --- */
+    --cjc-content-width: 720px;
+    --cjc-card-width: 800px;
+    --cjc-site-width: 1200px;
+
+    /* --- Shadows --- */
+    --cjc-shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.06);
+    --cjc-shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.08), 0 2px 4px -2px rgba(28, 25, 23, 0.06);
+    --cjc-shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.08), 0 4px 6px -4px rgba(28, 25, 23, 0.06);
+    --cjc-shadow-xl: 0 20px 25px -5px rgba(28, 25, 23, 0.1), 0 8px 10px -6px rgba(28, 25, 23, 0.08);
+
+    /* --- Borders --- */
+    --cjc-radius-sm: 4px;
+    --cjc-radius-md: 8px;
+    --cjc-radius-lg: 12px;
+    --cjc-radius-full: 9999px;
+
+    /* --- Transitions --- */
+    --cjc-transition-fast: 150ms ease;
+    --cjc-transition-base: 250ms ease;
+    --cjc-transition-slow: 400ms ease;
+}

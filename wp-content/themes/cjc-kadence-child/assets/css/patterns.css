@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Kapa Patterns — Hawaiian Structural Design Elements
+   ========================================================================== */
+
+/* --- Section Dividers --- */
+.kapa-divider {
+    width: 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+    position: relative;
+}
+
+/* Triangle (Ka Niu) — coconut frond shapes */
+.kapa-divider--triangle {
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='40' viewBox='0 0 48 40'%3E%3Cpath d='M0 40 L24 4 L48 40 Z' fill='%230e7490' opacity='0.5'/%3E%3Cpath d='M12 40 L24 14 L36 40 Z' fill='%23d97706' opacity='0.3'/%3E%3C/svg%3E");
+    background-size: auto 40px;
+    margin: 0;
+}
+
+/* Wave (Ka Wai) — flowing water pattern */
+.kapa-divider--wave {
+    height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='32' viewBox='0 0 120 32'%3E%3Cpath d='M0 16 Q15 2 30 16 Q45 30 60 16 Q75 2 90 16 Q105 30 120 16' fill='none' stroke='%230e7490' stroke-width='3' opacity='0.6'/%3E%3Cpath d='M0 22 Q15 10 30 22 Q45 34 60 22 Q75 10 90 22 Q105 34 120 22' fill='none' stroke='%23d97706' stroke-width='1.5' opacity='0.35'/%3E%3C/svg%3E");
+    background-size: auto 32px;
+    margin: var(--cjc-space-lg) 0;
+}
+
+/* Zigzag (Ka Wai) — sharp water pattern */
+.kapa-divider--zigzag {
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20' viewBox='0 0 40 20'%3E%3Cpath d='M0 20 L10 2 L20 20 L30 2 L40 20' fill='none' stroke='%230e7490' stroke-width='2.5' opacity='0.5'/%3E%3Cpath d='M5 20 L15 5 L25 20 L35 5' fill='none' stroke='%239a3412' stroke-width='1' opacity='0.25'/%3E%3C/svg%3E");
+    background-size: auto 20px;
+    margin: var(--cjc-space-lg) 0;
+}
+
+/* --- Background Textures --- */
+.kapa-bg--diamond {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 0 L32 16 L16 32 L0 16 Z' fill='none' stroke='%230e7490' stroke-width='1' opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 32px 32px;
+}
+
+/* --- Koa Wood Texture (for recipe card header) --- */
+.koa-wood-bg {
+    background: linear-gradient(
+        135deg,
+        var(--cjc-koa-wood) 0%,
+        #92400e 25%,
+        var(--cjc-koa-wood) 50%,
+        #92400e 75%,
+        var(--cjc-koa-wood) 100%
+    );
+    background-size: 200px 200px;
+}
+
+/* --- Lava Rock Texture (for footer) --- */
+.lava-rock-bg {
+    background-color: var(--cjc-lava-black);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%23292524' opacity='0.4'/%3E%3C/svg%3E");
+}
